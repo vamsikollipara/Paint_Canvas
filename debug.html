@@ -1,0 +1,60 @@
+<html>
+	<head>
+		<script type="text/javascript" src="js/paintApp.js"></script>
+		<script type="text/javascript" src="lib/excanvas.js"></script>
+		<script type="text/javascript" src="lib/jquery-1.10.2.js"></script>
+		<link rel="stylesheet" type="text/css" href="css/main.css"/>
+		<script>
+			$(document).ready(function() {
+				console.log("document ready");
+				//now call the rendering function
+				renderCanvas();
+			});
+		</script>
+	</head>
+	<body>
+		<div id='headSection'>
+			<!--contains contols-->
+		</div>
+		<div id='bodySection'>
+			<!--contains canvas-->
+			<div id='canvasHolder'>
+				<canvas id="myCanvas" width="1300" height='500'></canvas>
+			</div>
+			<input type="file" id="imageLoader" name="imageLoader"/>
+			
+			<a id="saveMe" onClick="saveCanvas(this, 'myCanvas')"> Save </a>
+			
+			<button id="clearCanvas" onclick="clearCanvas()"> clear </button> <br/>
+			
+			<!-- a color picker to choose the color -->
+			<input id="background-color" onchange="upColor(document.getElementById('background-color').value)" type="color" /> <br/>
+			
+			
+			<!-- no need of these contols since we have the color picker
+			<button class="pickColor" onclick="upColor('#FF0000')"> Red </button>
+			<button class="pickColor" onclick="upColor('#00FF00')"> Blue </button>
+			<button class="pickColor" onclick="upColor('#0000FF')"> Green </button>
+			<button class="pickColor" onclick="upColor('#FFCF33')"> Yellow </button>
+			<button class="pickColor" onclick="upColor('#cb3595')"> purple </button> -->
+			<br/>
+			<!--<button class="pickSize" onclick="upSize('#cb3595')"> pencil </button>
+			<button class="pickSize" onclick="upSize('#cb3595')"> small br </button> -->
+			
+			<input type="number" id="pick-size" name="size" value=1 min="1" step="1" onchange="upSize(document.getElementById('pick-size').value)">
+			<!-- now we have the size stepper we don't need the buttons  
+			<button class="pickSize" onclick="upSize('1')"> small </button>
+			<button class="pickSize" onclick="upSize('5')"> medium </button>
+			<button class="pickSize" onclick="upSize('10')"> Large </button>
+			<!-- we are using div because canvas yag is not suppoted in all browsers, especially IE-->
+		</div>
+		<div id='footSection'>
+			<!--contains some other contols and indicators-->
+			<div id='mouseXY'>
+				<label id='XLabel'>X:</label><div id="mouseX"></div>
+				<br/>
+				<label id='YLabel'>Y:</label><div id="mouseY"></div>
+			</div>
+		</div>
+	</body>
+</html>

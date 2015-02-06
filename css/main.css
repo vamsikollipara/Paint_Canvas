@@ -1,0 +1,25 @@
+#canvasHolder {
+	width: 1300px;
+	height: 500px;
+}
+
+
+#myCanvas {
+	border: 1px solid black;
+	border-radius: 5px;
+}
+
+#mouseX, #mouseY, #xLabel, #yLabel{
+	float: left;
+}
+
+#clearCanvas {
+	margin-top: 10px;
+}
+
+#background-color {
+	margin-top: 10px;
+}
+
+
+
